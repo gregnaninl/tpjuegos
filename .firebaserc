@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "juegos-gregnanin": {
+      "hosting": {
+        "tpjuegos": [
+          "juegos-gregnanin"
+        ]
+      }
+    }
+  }
+}
