@@ -31,7 +31,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+   /* AngularFireModule.initializeApp(environment.firebaseConfig),*/
     FontAwesomeModule
   ],
   providers: [AngularFirestore ],
