@@ -15,6 +15,10 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { environment } from 'src/environments/environment';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatSliderModule } from '@angular/material/slider';
+import { MaterialModule } from './material/material.module';
+
+ 
 
 
 @NgModule({
@@ -32,7 +36,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserAnimationsModule,
     AngularFireAuthModule,
    /* AngularFireModule.initializeApp(environment.firebaseConfig),*/
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatSliderModule,
+    MaterialModule
   ],
   providers: [AngularFirestore ],
   bootstrap: [AppComponent]

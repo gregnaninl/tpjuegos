@@ -1,4 +1,4 @@
-
+<!--
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand nav-link"  [routerLink]="''"  >
         <fa-icon [icon]="faPuzzlePiece"></fa-icon>    Sala de Juegos</a>         
@@ -16,3 +16,25 @@
 
 
 </nav>
+-->
+
+<mat-toolbar color="primary">
+  <button mat-icon-button [routerLink]="''">
+    <mat-icon>games</mat-icon>
+  </button>
+  <span>Sala de Juegos</span>
+  
+
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="boton" routerLink="/login">
+    <span>Login </span>
+</button>
+
+<button mat-icon-button class="boton" [routerLink]="'quien'">
+ <span> Quien Soy</span>
+</button>
+
+  <button mat-icon-button class="boton">
+    <mat-icon>person_pin</mat-icon>
+  </button>
+</mat-toolbar>
