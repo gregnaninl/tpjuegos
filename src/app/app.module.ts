@@ -9,8 +9,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { QuiensoyComponent } from './pages/quiensoy/quiensoy.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
-import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { environment } from 'src/environments/environment';
 
