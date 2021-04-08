@@ -1,8 +1,8 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import 'firebase/auth';
 //import * as firebase from 'firebase';
-import { auth } from  'firebase/app';
+//import { auth } from  'firebase/app';
 import { Observable, of } from 'rxjs';
 import { first, switchMap } from 'rxjs/operators';
 import {
@@ -16,24 +16,10 @@ import * as firebase from 'firebase/app';
   providedIn: 'root'
 })
 export class AuthService {
-  
+
   public user! : Usuario;
 
   constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) { }
-
-
-
-
-  async loginGoogle(){
-    try{
-     return firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider());      
-    }
-    catch(e){
-      console.log(e);
-      return(e);
-    }
-  }
-
 
 
   async login(email: string, password:string){
@@ -98,5 +84,3 @@ export class AuthService {
 
 
 }
-
-

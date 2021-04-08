@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +17,7 @@ import { environment } from 'src/environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
+import { AuthService } from './services/auth.service';
 
  
 
@@ -35,12 +36,14 @@ import { MaterialModule } from './material/material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFireAuthModule,
-   /* AngularFireModule.initializeApp(environment.firebaseConfig),*/
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     FontAwesomeModule,
     MatSliderModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [AngularFirestore ],
+  providers: [AngularFirestore,AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
