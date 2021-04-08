@@ -42,20 +42,20 @@ $tpjuegos-theme: mat-light-theme((
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat-core();
+//@include mat-core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$tpjuegos-primary: mat-palette($mat-indigo);
-$tpjuegos-accent: mat-palette($mat-pink, A200, A100, A400);
+//$tpjuegos-primary: mat-palette($mat-indigo);
+//$tpjuegos-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$tpjuegos-warn: mat-palette($mat-red);
+//$tpjuegos-warn: mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$tpjuegos-theme: mat-light-theme((
+/*$tpjuegos-theme: mat-light-theme((
   color: (
     primary: $tpjuegos-primary,
     accent: $tpjuegos-accent,
@@ -68,3 +68,4 @@ $tpjuegos-theme: mat-light-theme((
 // that you are using.
 //@include angular-material-theme($tpjuegos-theme);
 
+*/
