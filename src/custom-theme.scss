@@ -36,7 +36,7 @@ $tpjuegos-theme: mat-light-theme((
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
+//@import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -66,5 +66,5 @@ $tpjuegos-theme: mat-light-theme((
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($tpjuegos-theme);
+//@include angular-material-theme($tpjuegos-theme);
 

@@ -19,7 +19,8 @@
           "options": {
             "allowedCommonJsDependencies": [
             "lodash",
-            "@angular/fire/firestore"
+            "@angular/fire/firestore",
+            "@firebase/auth"
          ],
             "outputPath": "dist/tpjuegos",
             "index": "src/index.html",
