@@ -7,9 +7,11 @@ import { Observable, of } from 'rxjs';
 import { first, switchMap } from 'rxjs/operators';
 import {
   AngularFirestore,
+  AngularFirestoreCollection,
   AngularFirestoreDocument,
 } from '@angular/fire/firestore';
 import { Usuario } from '../clases/usuario';
+import { Logs } from '../clases/logs';
 import * as firebase from 'firebase/app';
 
 @Injectable({
@@ -18,8 +20,11 @@ import * as firebase from 'firebase/app';
 export class AuthService {
   
   public user! : Usuario;
+  private logCollection!: AngularFirestoreCollection<Logs>;
 
-  constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) { }
+  constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) {
+    this.logCollection= afs.collection<Logs>('logUser');
+   }
 
 
 
@@ -34,6 +39,18 @@ export class AuthService {
     }
   }
 
+  async onSaveLog(logUser: Logs): Promise<void> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const id1 = this.afs.createId();
+        const data = { id1, ...logUser };
+        const result = this.logCollection.doc(id1).set(data);
+        resolve(result);
+      } catch (error) {
+        reject(error.message);
+      }
+    });
+  }
 
 
   async login(email: string, password:string){

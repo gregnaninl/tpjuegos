@@ -19,6 +19,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
 import { AuthService } from './services/auth.service';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ChatComponent } from './pages/chat/chat.component';
+import { PiedraComponent } from './pages/juegos/piedra/piedra.component';
+import { TatetiComponent } from './pages/juegos/tateti/tateti.component';
+import { HomejuegosComponent } from './pages/juegos/homejuegos/homejuegos.component';
 
  
 
@@ -30,7 +35,12 @@ import { AuthService } from './services/auth.service';
     HomeComponent,
     QuiensoyComponent,
     RegistroComponent,
-    NavbarComponent
+    NavbarComponent,
+    PageNotFoundComponent,
+    ChatComponent,
+    PiedraComponent,
+    TatetiComponent,
+    HomejuegosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,10 @@
 export type Roles = 'SUSCRIPTOR' | 'EDITOR' | 'ADMIN';
 
-export interface Usuario {
-    uid: string ;
-    email: string;
+export class Usuario {
+    uid!: string ;
+    email!: string;
     displayName?: string;
-    emailVerified: boolean;
+    emailVerified!: boolean;
     password?: string;
     photoURL?: string;
     role?: Roles;

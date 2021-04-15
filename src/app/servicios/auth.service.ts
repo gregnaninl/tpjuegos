@@ -7,6 +7,7 @@ import { Observable, of } from 'rxjs';
 import { first, switchMap } from 'rxjs/operators';
 import {
   AngularFirestore,
+  AngularFirestoreCollection,
   AngularFirestoreDocument,
 } from '@angular/fire/firestore';
 import { Usuario } from '../clases/usuario';
@@ -18,8 +19,25 @@ import * as firebase from 'firebase/app';
 export class AuthService {
 
   public user! : Usuario;
+  private logCollection!: AngularFirestoreCollection<Usuario>;
 
-  constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) { }
+  constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) {
+    this.logCollection= afs.collection<Usuario>('logUser');
+   }
+
+   
+   async onSaveLog(contactForm: Usuario): Promise<void> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const id1 = this.afs.createId();
+        const data = { id1, ...contactForm };
+        const result = this.logCollection.doc(id1).set(data);
+        resolve(result);
+      } catch (error) {
+        reject(error.message);
+      }
+    });
+  }
 
 
   async login(email: string, password:string){
