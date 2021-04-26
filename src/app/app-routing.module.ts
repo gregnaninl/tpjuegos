@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChatComponent } from './pages/chat/chat.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListadosComponent } from './pages/listados/listados.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -13,7 +14,7 @@ const routes: Routes = [
   {path: 'quien', component : QuiensoyComponent} ,
   {path: 'registro', component : RegistroComponent} ,  
   {path: 'listados', component : ListadosComponent} , 
-
+  {path: 'chat', component : ChatComponent} , 
   { path: 'juegos', loadChildren: () => import('./juegos/juegos.module').then(m => m.JuegosModule),
   data: { preload: true } 
   },
