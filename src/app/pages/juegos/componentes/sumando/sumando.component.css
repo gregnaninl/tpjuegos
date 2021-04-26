@@ -1,0 +1,108 @@
+
+.contenedorTabla{
+    color: white;
+    font-size: 25;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    
+  }
+
+
+.titulo{
+    margin: auto;
+    padding: auto;
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+
+}
+
+.table{
+
+    top: auto;
+    margin: auto;
+   padding-top: 20px;
+    height: 50px;
+    width: 50px;
+    align-content: center;
+    border-style: solid ;
+    border-radius: 10px;
+    background-color: whitesmoke;
+
+}
+img {
+    height: 50px;
+    width: 50px;
+
+}
+
+.form-control{
+    height: 50px;
+    width:50px;
+    text-align: center;
+    font-size-adjust: unset;
+   
+
+}
+
+
+form
+{
+    color: white;
+    background-color: rgb(36, 92, 196);
+    text-align: center;
+    border-radius: 5px;
+    padding:auto;
+    margin: 0 auto;
+    background-position: center;
+
+}
+
+
+
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+   
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 50px;
+    font-size: 17px;
+}
+#snackbar.Ganador {
+    background-color: rgb(68, 4, 105);
+}
+#snackbar.Perdedor {
+    background-color: #FF0000;
+}
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.estilosContainer{
+
+    background-position: center;
+    position: relative;
+    -webkit-background-size : cover;
+    -moz-background-size : cover;
+    -moz-background-size : cover;
+    background-size: cover;
+    margin:1;
+    padding:11%;
+    }
+    
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

@@ -1,0 +1,18 @@
+
+     
+     <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "pacman" [fullScreen] = "true"><p style="color: white" > Verificando que eligio la maquina. </p></ngx-spinner>
+    <div *ngIf="nuevoJuego.imagenesUsuario != null" style="text-align: center;" >
+      <br><br>
+        <h2>Elegí tu respuesta</h2>
+    
+    
+    
+            <br><br>
+            <button (click)="verificar('piedra')" class="btnOpciones" value="piedra" id="btn1"><img src="../../../assets/imagenes/PPT/{{nuevoJuego.imagenesUsuario[0]['path']}}" width="200px" height="200px"></button>
+            <button (click)="verificar('papel')" class="btnOpciones" value="papel" id="btn2"><img src="../../../assets/imagenes/PPT/{{nuevoJuego.imagenesUsuario[1]['path']}}" width="200px" height="200px"></button>
+            <button (click)="verificar('tijera')" class="btnOpciones" value="tijera" id="btn3"><img src="../../../assets/imagenes/PPT/{{nuevoJuego.imagenesUsuario[2]['path']}}" width="200px" height="200px"></button>
+          </div>
+   <br><br>
+    <button    *ngIf="nuevoJuego.imagenMaquina == null" class="btn btn-primary btn-lg btn-block" (click)="generar()">Comenzar Nuevo Juego</button>
+    
+   

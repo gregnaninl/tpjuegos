@@ -3,7 +3,7 @@ import { faBlog } from '@fortawesome/free-solid-svg-icons';
 import { faPuzzlePiece } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthService } from 'src/app/servicios/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -31,6 +31,7 @@ export class NavbarComponent implements OnInit {
     try {
       await this.authSvc.logout();
       this.router.navigate(['login']);
+      localStorage.clear();
     } catch (error) {
       console.log(error);
     }

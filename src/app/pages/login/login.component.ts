@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../services/auth.service";
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/clases/usuario';
 import Swal from 'sweetalert2';
 import { Logs } from 'src/app/clases/logs';
 import { formatDate } from '@angular/common';
@@ -51,8 +50,8 @@ export class LoginComponent implements OnInit {
 
    //cargar datos user
    onAdminLogin(){
-   this.loginForm.get('email')?.setValue('lea@gmail.com');
-    this.loginForm.get('password')?.setValue('123456');
+   this.loginForm.get('email')?.setValue('user@gmail.com');
+    this.loginForm.get('password')?.setValue('user123');
    }
 
    //login google
@@ -96,7 +95,8 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/']);
       console.log("ingresaste correctamente");
       //guardo el log si ingresa ok
-      this.guardarLog();     
+      this.guardarLog();  
+      localStorage.setItem("usuarioEnLinea",JSON.stringify(this.loginForm.get('email')?.value));   
       
     } else if(user.code == "auth/wrong-password" ){
       Swal.fire('Contraseña incorrecta','Revise la contraseña ingresada','error'); 

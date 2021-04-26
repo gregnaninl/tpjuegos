@@ -18,12 +18,26 @@ import { environment } from 'src/environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
+
 import { AuthService } from './services/auth.service';
+import { JuegosService } from './services/juegos.service';
+
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { PiedraComponent } from './pages/juegos/piedra/piedra.component';
 import { TatetiComponent } from './pages/juegos/tateti/tateti.component';
 import { HomejuegosComponent } from './pages/juegos/homejuegos/homejuegos.component';
+import { PppComponent } from './pages/juegos/componentes/ppp/ppp.component';
+import { SumandoComponent } from './pages/juegos/componentes/sumando/sumando.component';
+
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { JuegoAnagramaComponent } from './pages/juegos/juego-anagrama/juego-anagrama.component';
+import { AnagramaComponent } from './pages/juegos/componentes/anagrama/anagrama.component';
+import { TablaResultadosComponent } from './pages/juegos/componentes/tabla-resultados/tabla-resultados.component';
+import { JuegoSumandoComponent } from './pages/juegos/juego-sumando/juego-sumando.component';
+import { ListadosComponent } from './pages/listados/listados.component';
+
 
  
 
@@ -40,7 +54,17 @@ import { HomejuegosComponent } from './pages/juegos/homejuegos/homejuegos.compon
     ChatComponent,
     PiedraComponent,
     TatetiComponent,
-    HomejuegosComponent
+    HomejuegosComponent,
+    PppComponent,
+    SumandoComponent,
+    JuegoAnagramaComponent,
+    AnagramaComponent,
+    TablaResultadosComponent,
+    JuegoSumandoComponent,
+    ListadosComponent ,
+   
+
+   
   ],
   imports: [
     BrowserModule,
@@ -50,11 +74,13 @@ import { HomejuegosComponent } from './pages/juegos/homejuegos/homejuegos.compon
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FontAwesomeModule,
     MatSliderModule,
+    MatProgressSpinnerModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule 
   ],
-  providers: [AngularFirestore,AuthService ],
+  providers: [AngularFirestore,AuthService ,JuegosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

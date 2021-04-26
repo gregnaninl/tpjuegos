@@ -1,0 +1,26 @@
+ 
+     <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "pacman" [fullScreen] = "true"><p style="color: white" > Esperando que ingreses una palabra</p></ngx-spinner>
+     
+     <div class="container estilosContainer" style="text-align: center;">
+         
+             <h1>Anagrama</h1>
+             <br><br>
+       
+         <button *ngIf="anagrama.palabraDesorganizada == null" (click) = "generar()" class="btn btn-primary btn-lg btn-block" >Generar</button>
+        
+     <form style="text-align: center;" [hidden]="ocultarPalabra" >
+    <br>
+     <h2 [hidden]="ocultarPalabra" *ngIf="anagrama.palabraDesorganizada != null">{{anagrama.palabraDesorganizada}}</h2>
+     <br><br>
+     <input *ngIf="anagrama.palabraDesorganizada != null" type="text" name="palabraIngresada" [(ngModel)] = "anagrama.palabraIngresada" id="palabraIngresada" placeholder="Ingrese la palabra">
+     <br><br>
+     <h2><p *ngIf="anagrama.palabraDesorganizada != null" >Esperando que ingreses una palabra</p></h2>
+     <br><br>
+     <button [hidden]="ocultarVerificar"  *ngIf="anagrama.palabraDesorganizada != null" (click) = "verificar()" 
+     class="btn btn-secondary btn-lg" >Verificar</button>
+     <br><br>
+     </form>
+
+    </div>
+    
+

@@ -1,0 +1,44 @@
+.container {
+    padding: 10px 16px;
+  
+   
+}
+
+
+
+form
+{
+    color: white;
+    background-color: rgb(36, 92, 196);
+    text-align: center;
+    border-radius: 5px;
+    padding:auto;
+    margin: 0 auto;
+    background-position: center;
+
+}
+
+
+.estilosContainer{
+   /* background-color: lightblue;*/
+    background-position: center;
+    position: relative;
+    -webkit-background-size : cover;
+    -moz-background-size : cover;
+    -moz-background-size : cover;
+    background-size: cover;
+    margin:1;
+
+}
+
+
+input[type=text] {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+

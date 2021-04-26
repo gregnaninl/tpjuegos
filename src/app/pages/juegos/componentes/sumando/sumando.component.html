@@ -1,0 +1,81 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "pacman" [fullScreen] = "true"><p style="color: white" > Calculando espere por favor!!!1/p></ngx-spinner>
+     
+<div class="container estilosContainer" style="text-align: center;">
+    
+        <h1>Sumando 15</h1>
+        <br>  
+
+<form>
+    <br>  
+
+  <table class= "table ">
+  <tr>
+  <td>
+   <img src="../../../assets/imagenes/juego/Img2.png" [hidden]="ocultarRespuesta" >
+    <!--<input name="numero" id="numero1" type="text" required class="form-control" maxlength="2" size="number" > -->
+    <input [(ngModel)]="this.numero1" placeholder="?" name="numeroIngresado" type="number" class="form-control" maxlength="1" [hidden]="!ocultarRespuesta" />
+  </td>
+  <td>
+           <img src="../../../assets/imagenes/juego/Img7.png" [hidden]="ocultarRespuesta">
+    <!-- <input name="numero" id="numero2" type="text" required class="form-control" maxlength="2" size="number" >-->
+     <input [(ngModel)]="this.numero2" placeholder="?" name="numeroIngresado" type="number" class="form-control" maxlength="1" [hidden]="!ocultarRespuesta" />
+    </td>
+  <td>
+         <img src="../../../assets/imagenes/juego/Img6.png" [hidden]="ocultarRespuesta" > 
+  <!-- <input name="numero" id="numero3" type="text" required class="form-control" maxlength="2" size="number"> -->
+   <input [(ngModel)]="this.numero3" placeholder="?" name="numeroIngresado" type="number" class="form-control" maxlength="1" [hidden]="!ocultarRespuesta"/>
+  </td>
+  </tr>
+  <tr>
+      <td>
+             <img src="../../../assets/imagenes/juego/Img9.png"[hidden]="ocultarRespuesta" >
+      <!--    <input name="numero" id="numero4" type="text" required class="form-control" maxlength="2" size="number"> -->
+          <input [(ngModel)]="this.numero4" placeholder="?" name="numeroIngresado" type="number" class="form-control" maxlength="1" [hidden]="!ocultarRespuesta"/>
+      </td>
+      <td>
+                 <img src="../../../assets/imagenes/juego/Img5.png" [hidden]="ocultarRespuesta" > 
+      <!-- <input name="numero" id="numero5" type="text" required class="form-control" maxlength="2" size="number">-->
+       <input [(ngModel)]="this.numero5" placeholder="?" name="numeroIngresado" type="number" class="form-control" maxlength="1" [hidden]="!ocultarRespuesta"/>
+      </td>
+      <td>
+              <img src="../../../assets/imagenes/juego/Img1.png" [hidden]="ocultarRespuesta" >
+       <!--  <input name="numero" id="numero6" type="text" required class="form-control" maxlength="2" size="number"> -->
+         <input [(ngModel)]="this.numero6" placeholder="?" name="numeroIngresado" type="number" class="form-control" maxlength="1" [hidden]="!ocultarRespuesta"/>
+      </td>
+  </tr>
+  <tr>
+      <td>
+              <img src="../../../assets/imagenes/juego/Img4.png" [hidden]="ocultarRespuesta" > 
+      <!--  <input name="numero" id="numero7" type="text" required class="form-control" maxlength="2" size="number">-->
+        <input [(ngModel)]="this.numero7" placeholder="?" name="numeroIngresado" type="number" class="form-control" maxlength="1" [hidden]="!ocultarRespuesta"/>
+      </td>
+      <td>
+                     <img src="../../../assets/imagenes/juego/Img3.png" [hidden]="ocultarRespuesta" >
+  <!-- <input name="numero" id="numero8" type="text" required class="form-control" maxlength="2" size="number">-->
+   <input [(ngModel)]="this.numero8" placeholder="?" name="numeroIngresado" type="number" class="form-control" maxlength="1" [hidden]="!ocultarRespuesta"/> 
+      </td>
+      <td>
+                <img src="../../../assets/imagenes/juego/Img8.png" [hidden]="ocultarRespuesta" > 
+      <!-- <input name="numero" id="numero9" type="text" required class="form-control" maxlength="2" size="number"> -->
+       <input [(ngModel)]="this.numero9" placeholder="?" name="numeroIngresado" type="number" class="form-control" maxlength="1" [hidden]="!ocultarRespuesta"/> 
+      </td>
+      </tr>
+  
+  
+  </table>
+
+
+  <br><br>
+
+
+        <h2  [hidden]="ocultarNuevoJuego" ><button (click)="NuevoJuego()" class="btn btn-secondary btn-lg">Nuevo Juego</button></h2>
+        
+            <h2  [hidden]="ocultarVerificar" ><button (click)="consultar()" class="btn btn-secondary btn-lg">verificar </button></h2>
+        
+            <h2  [hidden]="!ocultarVerificar"><button  (click)="MostrarResultado()"  class="btn btn-secondary btn-lg">Mostrar Resultado</button></h2>
+         
+            <h2 [hidden]="ocultarVerificar" ><p>Esperando numeros...</p></h2>
+
+  <br><br>
+        
+        </form>

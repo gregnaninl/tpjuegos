@@ -1,0 +1,62 @@
+.container {
+    padding: 40px 16px;
+  
+   
+}
+  
+.titulo{
+    margin: auto;
+    padding: auto;
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+
+}
+
+
+
+.btnOpciones{
+color: white;
+background-color: black;
+padding: 14px 15px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 30%;
+border-radius: 42px;
+}
+
+.btnApretado{color: white;
+background-color: rgb(48, 63, 159);
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 30%;
+border-radius: 42px;
+}
+
+.btnApretado:hover{
+    opacity: 0.8;
+}
+
+
+
+.estilosContainer{
+
+background-position: center;
+position: relative;
+-webkit-background-size : cover;
+-moz-background-size : cover;
+-moz-background-size : cover;
+background-size: cover;
+margin:1;
+padding:11%;
+}
+
+
+
+#boton:hover {
+  background: white;
+  color: rgb(48, 63, 159) !important;
+}

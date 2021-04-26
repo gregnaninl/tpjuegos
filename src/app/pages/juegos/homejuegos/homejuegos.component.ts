@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomejuegosComponent implements OnInit {
 
+
+  //jugador : JSON = JSON.parse(localStorage.getItem('usuarioEnLinea')!);
+
   constructor() { }
 
   ngOnInit(): void {
+
+   // console.log(this.jugador);
   }
 
 }

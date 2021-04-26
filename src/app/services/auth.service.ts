@@ -1,15 +1,8 @@
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import 'firebase/auth';
-//import * as firebase from 'firebase';
-import { auth } from  'firebase/app';
-import { Observable, of } from 'rxjs';
 import { first, switchMap } from 'rxjs/operators';
-import {
-  AngularFirestore,
-  AngularFirestoreCollection,
-  AngularFirestoreDocument,
-} from '@angular/fire/firestore';
+import { AngularFirestore,  AngularFirestoreCollection} from '@angular/fire/firestore';
 import { Usuario } from '../clases/usuario';
 import { Logs } from '../clases/logs';
 import * as firebase from 'firebase/app';
@@ -62,7 +55,6 @@ export class AuthService {
     }
     catch(e){
     console.log(e);
-//    Swal.fire('Algo Salio Mal!',e,'error');   
     return e; 
     }    
         

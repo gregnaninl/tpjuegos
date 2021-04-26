@@ -1,0 +1,29 @@
+
+        <h3 style="text-align: center;">Listado de Jugadores {{juegoFiltro}}</h3>
+        <br><br>
+     
+     <table class="table table-hover">
+            <thead>
+                <tr>
+                  <th>Jugador</th>
+                  <th>Juego</th>
+                  <th>Gano/perdio</th>
+                  <th>Fecha</th>
+                 
+                </tr>
+              </thead>
+            <tbody>
+              <tr *ngFor="let lista  of data"  >
+                <td>{{ lista.email }} &nbsp;</td>
+                <td>{{ lista.juego }} &nbsp;</td>
+                <td>{{ lista.estado }} &nbsp;</td>
+                <td>{{ lista.fecha }} &nbsp;</td>
+              
+                
+              </tr>
+            </tbody>
+          </table>
+
+         
+       
+       
