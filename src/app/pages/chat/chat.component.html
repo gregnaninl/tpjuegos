@@ -4,24 +4,21 @@
             <div class="col-md-6">
                 <div class="card card-bordered">
                     <div class="card-header">
-                        <h4 class="card-title"><strong>Chat</strong></h4> <a class="btn btn-xs btn-secondary" href="#" data-abc="true">Let's Chat App</a>
+                        <h4 class="card-title"><strong>Chat</strong></h4> 
                     </div>
                     <div class="ps-container ps-theme-default ps-active-y" id="chat-content" style="overflow-y: scroll !important; height:400px !important;">
-                       <template  *ngFor="let lista  of data"   >
-                        <div   *ngIf="lista.usuario != jugador1" class="media media-chat"> 
-                            <div class="media-body">
-                                <p>{{ lista.mensaje }}</p>
+                     
+              
+                            <div *ngFor="let lista  of data "  [ngClass]= "{ 'media-chat-reverse' : lista.usuario === jugador1, 'media media-chat' : lista.usuario !=jugador1 } " > 
+                               
+                                <div class="media-body">
+                                  <p *ngIf= "lista.usuario != jugador1" class="meta">{{lista.usuario}} </p>  
+                                <p>{{ lista.mensaje }}</p>                        
                                 <p class="meta"><time datetime="2021">{{lista.fecha}}</time></p>
                             </div>
                         </div>
-                       <div  *ngIf="lista.usuario === jugador1" class="media media-chat media-chat-reverse">
-                            <div class="media-body">
-                                <p>{{ lista.mensaje }}</p>
-                                <p>HOla</p>
-                            <p class="meta"><time datetime="2021">{{lista.fecha}}</time></p>
-                            </div>
-                        </div>
-                       </template >
+
+                       
                         <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
                             <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
                         </div>

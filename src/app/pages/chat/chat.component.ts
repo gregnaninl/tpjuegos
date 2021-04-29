@@ -38,10 +38,10 @@ export class ChatComponent implements OnInit {
    public guardarChat(){     
     this.mensaje.usuario= this.jugador1;
     const fecha =  new Date();
-    this.mensaje.fecha= formatDate(fecha,'dd-MM-yyyy hh:mm:ss a','en-US');
+    this.mensaje.fecha= this.getTimeStamp();//formatDate(fecha,'dd-MM-yyyy hh:mm:ss a','en-US');
   
        if(this.mensaje.mensaje){     
-      
+      console.info(this.mensaje);
       this.jugSvc.onSaveContact(this.mensaje);
       this.mensaje.mensaje='';
     }
@@ -64,11 +64,23 @@ export class ChatComponent implements OnInit {
   cargarTabla(listado : Object){
     const datos = Object.values(listado);
     this.data= datos;
-    this.data.sort((a, b) => {
-    return <any>new Date(a.fecha) - <any>new Date(b.fecha);
-      });
+ /*  this.data.sort((a, b) => {
+    return <any>new Date(Date.parse(a.fecha)) - <any>new Date(Date.parse(b.fecha));
+      });*/
       console.log(this.data);
         
+  }
+
+  getTimeStamp() {
+    const now = new Date();
+    const date = now.getUTCFullYear() + '/' +
+                 (now.getUTCMonth() + 1) + '/' +
+                 now.getUTCDate();
+    const time = now.getUTCHours() + ':' +
+                 now.getUTCMinutes() + ':' +
+                 now.getUTCSeconds();
+
+    return (date + ' ' + time);
   }
   
 
