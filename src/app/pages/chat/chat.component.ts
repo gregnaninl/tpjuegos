@@ -21,12 +21,15 @@ export class ChatComponent implements OnInit {
   public mensaje! : Chat;
 
 
+
   
   constructor( private db : AngularFirestore, private jugSvc :ChatService) {
     this.data= new Array<Chat>();
     this.mensaje = new Chat();
     this.mensaje.usuario=this.jugador1;
-    //console.log(this.jugador1);
+  
+    console.log(new Date().toString());
+    console.log(new Date().toLocaleString());
    }
 
   ngOnInit(): void {
@@ -37,9 +40,7 @@ export class ChatComponent implements OnInit {
 
    public guardarChat(){     
     this.mensaje.usuario= this.jugador1;
-    const fecha =  new Date();
-    this.mensaje.fecha= this.getTimeStamp();//formatDate(fecha,'dd-MM-yyyy hh:mm:ss a','en-US');
-  
+      this.mensaje.fecha= Date.now().toString();  
        if(this.mensaje.mensaje){     
       console.info(this.mensaje);
       this.jugSvc.onSaveContact(this.mensaje);
@@ -48,40 +49,46 @@ export class ChatComponent implements OnInit {
    
   }
  
-
+ 
   public cargarMensajes(){
 
-    this.db.collection('chat').valueChanges().subscribe(
-      (res)=>{
-        this.listadoChats = res;
-        this.cargarTabla(this.listadoChats);         
-          },
-      (error)=> console.log(error)     
-      );
+    this.jugSvc.traerTodos().valueChanges().subscribe((res:any) => {
+      let auxList = new Array();
+      for (let index = 0; index < res.length; index++) {
+          let currentChat = res[index];
+          let chat = new Chat();
+          chat.fecha = currentChat["fecha"];
+          chat.usuario = currentChat["usuario"];
+          chat.mensaje = currentChat["mensaje"];
+          auxList.push(chat);
 
+      }
+      console.log(auxList);  
+     this.data= auxList.sort((a, b) => a.fecha.localeCompare(b.fecha));
+     console.log(this.data);
+    })
   }
 
-  cargarTabla(listado : Object){
-    const datos = Object.values(listado);
-    this.data= datos;
- /*  this.data.sort((a, b) => {
-    return <any>new Date(Date.parse(a.fecha)) - <any>new Date(Date.parse(b.fecha));
-      });*/
-      console.log(this.data);
-        
-  }
+  
 
-  getTimeStamp() {
-    const now = new Date();
-    const date = now.getUTCFullYear() + '/' +
-                 (now.getUTCMonth() + 1) + '/' +
-                 now.getUTCDate();
-    const time = now.getUTCHours() + ':' +
-                 now.getUTCMinutes() + ':' +
-                 now.getUTCSeconds();
+  public getDate(fecha: any) {
+    console.log(new Date(+fecha).toDateString()) ;  
+    return new Date(+fecha).toLocaleTimeString();
+     
+}
 
-    return (date + ' ' + time);
-  }
+getTimeStamp() {
+  const now = new Date();
+  const date = now.getUTCFullYear() + '-' +
+               (now.getUTCMonth() + 1) + '-' +
+               now.getUTCDate();
+              
+  const time = now.getUTCHours()-3 + ':' +
+               now.getUTCMinutes() + ':' +
+               now.getUTCSeconds();
+
+  return (date + ' ' + time);
+}
   
 
 

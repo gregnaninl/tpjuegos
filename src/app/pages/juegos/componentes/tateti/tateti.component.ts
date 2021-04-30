@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 
 @Component({
   selector: 'app-tateti',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tateti.component.css']
 })
 export class TatetiComponent implements OnInit {
+
+  @Input() value?: string="";//'X' | 'O';
 
   constructor() { }
 

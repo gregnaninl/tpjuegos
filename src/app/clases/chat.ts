@@ -1,8 +1,8 @@
 export class Chat {
        
-  fecha!: string;
+ fecha!: string;
   usuario!: string;
   id!: string;
   mensaje!: string;       
-   
+  
 }

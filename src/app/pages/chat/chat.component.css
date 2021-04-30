@@ -2,6 +2,14 @@
     border: 1px solid #ebebeb
 }
 
+
+.chat {
+    border-radius: 5px;
+    border-style: solid;
+    border-width:4px;
+    background-color:  #8b95a5;
+  }
+
 .card {
     border: 0;
     border-radius: 0px;
@@ -17,8 +25,13 @@
 }
 
 body {
-    background-color: #f9f9fa
+    background-color:  #8b95a5; /* #f9f9fa*/
 }
+
+#chat-content{
+    background-image: url('../../../assets/imagenes/chat/fondo-chat.jpg');
+}
+
 
 .card-header:first-child {
     border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
@@ -33,16 +46,22 @@ body {
     align-items: center;
     padding: 15px 20px;
     background-color: transparent;
-    border-bottom: 1px solid rgba(77, 82, 89, 0.07)
+    border-bottom: 1px solid rgba(77, 82, 89, 0.07);
+    background-color: rgb(48, 63, 159);
+    color: #f1f2f3;
+  
+    
 }
 
 .card-header .card-title {
     padding: 0;
-    border: none
+    border: none;
+    text-align: center;
 }
 
 h4.card-title {
-    font-size: 17px
+    font-size: 17px;
+    
 }
 
 .card-header>*:last-child {
@@ -51,7 +70,9 @@ h4.card-title {
 
 .card-header>* {
     margin-left: 8px;
-    margin-right: 8px
+    margin-right: 8px;
+    text-align: center;
+   
 }
 
 .btn-secondary {
@@ -77,7 +98,8 @@ h4.card-title {
     line-height: 1.5;
     margin-bottom: 0;
     padding: 15px 20px;
-    border-bottom: 1px solid rgba(77, 82, 89, 0.07)
+    border-bottom: 1px solid rgba(77, 82, 89, 0.07);
+    
 }
 
 .ps-container {
@@ -219,7 +241,7 @@ h4.card-title {
 .media-chat-reverse .media-body p {
     float: right;
     clear: right;
-    background-color: #48b0f7;
+    background-color: rgb(48, 63, 159);
     color: #fff;
     border-radius: 3px;
     padding: 6px 8px;

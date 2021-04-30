@@ -4,7 +4,7 @@
             <div class="col-md-6">
                 <div class="card card-bordered">
                     <div class="card-header">
-                        <h4 class="card-title"><strong>Chat</strong></h4> 
+                        <h4 class="card-title" style="text-align: center;"><strong>Chat</strong></h4> 
                     </div>
                     <div class="ps-container ps-theme-default ps-active-y" id="chat-content" style="overflow-y: scroll !important; height:400px !important;">
                      
@@ -13,9 +13,9 @@
                                
                                 <div class="media-body">
                                   <p *ngIf= "lista.usuario != jugador1" class="meta">{{lista.usuario}} </p>  
-                                <p>{{ lista.mensaje }}</p>                        
-                                <p class="meta"><time datetime="2021">{{lista.fecha}}</time></p>
-                            </div>
+                                <p>{{ lista.mensaje }}</p>    
+                                <p class="meta">{{getDate(lista.fecha)}}</p>                    
+                               </div>
                         </div>
 
                        
@@ -33,6 +33,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+      </div>
+                <div style="text-align: center;">
+                    <button type="button" class="btn btn-primary btn-lg" id="volver" routerLink="/juegos">volver</button>
+                </div>
+
     </div>
 </div>

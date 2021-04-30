@@ -1,0 +1,29 @@
+<div >
+    <img src="./assets/imagenes/banner_1.png" class="img-fluid " alt="Responsive image" >
+  </div>
+  <div class="container">
+    <br>
+    <h1 style="text-align: center;">Tateti</h1>
+      
+    <br>
+    <p style="text-align: center;"> <strong>Bienvenido al juego Tateti,este es un juego de a 2 personas!!!
+        <br> asique llama a alguien para poder divertire. Para comenzar <br>
+         directamente elige en que lugar quieres poner tu cruz!!!</strong></p>
+  <!--  <button  class="btn btn-primary btn-lg btn-block" status="danger" [hidden]="limpiar" (click)="newGame()">Liampiar Cuadro</button>
+-->
+  
+   
+        <br>
+        <main style="text-align: center;">
+        <app-tateti
+            *ngFor="let val of squares; let i = index" 
+            [value]="val"
+            (click)="makeMove(i)"> 
+        </app-tateti>
+    </main>
+    <br>
+    <div style="text-align: center;">
+        <button type="button" class="btn btn-primary btn-lg" id="volver" routerLink="/juegos">volver</button>
+    </div>
+   
+  </div>

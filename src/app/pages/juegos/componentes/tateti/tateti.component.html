@@ -1,1 +1,3 @@
-<p>tateti works!</p>
+<button  *ngIf="!value">{{ value }}</button>
+<button  hero status="success" *ngIf="value == 'X'">{{ value }}</button>
+<button  hero status="info" *ngIf="value == 'O'">{{ value }}</button>

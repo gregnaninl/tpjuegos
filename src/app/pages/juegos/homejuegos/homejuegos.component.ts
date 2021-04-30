@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomejuegosComponent implements OnInit {
 
+  public ocultarchat : boolean= true;
 
   //jugador : JSON = JSON.parse(localStorage.getItem('usuarioEnLinea')!);
 

@@ -29,4 +29,8 @@ export class ChatService {
     });
   }
 
+  public traerTodos(): AngularFirestoreCollection<Chat> {
+    return this.contactsCollection;
+}
+
 }

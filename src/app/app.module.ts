@@ -25,7 +25,7 @@ import { JuegosService } from './services/juegos.service';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { PiedraComponent } from './pages/juegos/piedra/piedra.component';
-import { TatetiComponent } from './pages/juegos/tateti/tateti.component';
+import { TatetiComponent } from './pages/juegos/componentes/tateti/tateti.component';
 import { HomejuegosComponent } from './pages/juegos/homejuegos/homejuegos.component';
 import { PppComponent } from './pages/juegos/componentes/ppp/ppp.component';
 import { SumandoComponent } from './pages/juegos/componentes/sumando/sumando.component';
@@ -37,6 +37,7 @@ import { AnagramaComponent } from './pages/juegos/componentes/anagrama/anagrama.
 import { TablaResultadosComponent } from './pages/juegos/componentes/tabla-resultados/tabla-resultados.component';
 import { JuegoSumandoComponent } from './pages/juegos/juego-sumando/juego-sumando.component';
 import { ListadosComponent } from './pages/listados/listados.component';
+import { JuegoTatetiComponent } from './pages/juegos/juego-tateti/juego-tateti.component';
 
 
  
@@ -61,7 +62,8 @@ import { ListadosComponent } from './pages/listados/listados.component';
     AnagramaComponent,
     TablaResultadosComponent,
     JuegoSumandoComponent,
-    ListadosComponent ,
+    ListadosComponent,
+    JuegoTatetiComponent ,
    
 
    
