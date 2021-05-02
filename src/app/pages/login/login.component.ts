@@ -49,10 +49,15 @@ export class LoginComponent implements OnInit {
 
 
    //cargar datos user
-   onAdminLogin(){
+   onUserLogin(){
    this.loginForm.get('email')?.setValue('user@gmail.com');
     this.loginForm.get('password')?.setValue('user123');
    }
+
+   onTestLogin(){
+    this.loginForm.get('email')?.setValue('test@gmail.com');
+     this.loginForm.get('password')?.setValue('123456');
+    }
 
    //login google
 

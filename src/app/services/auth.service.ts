@@ -14,6 +14,7 @@ export class AuthService {
   
   public user! : Usuario;
   private logCollection!: AngularFirestoreCollection<Logs>;
+  public isLogguedIn : boolean = false;
 
   constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) {
     this.logCollection= afs.collection<Logs>('logUser');
@@ -24,7 +25,8 @@ export class AuthService {
 
   async loginGoogle(){
     try{
-     return firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider());      
+     return firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()); 
+     this.isLogguedIn = true;     
     }
     catch(e){
       console.log(e);
@@ -51,6 +53,7 @@ export class AuthService {
       const result = await this.afAuth.signInWithEmailAndPassword(
         email, 
         password);
+        this.isLogguedIn = true;
         return result;
     }
     catch(e){
@@ -76,6 +79,7 @@ export class AuthService {
   async logout(){
     try{
       await this.afAuth.signOut();  
+      this.isLogguedIn= false;
     }
     catch(e){
       //Swal.fire('Algo Salio Mal!',e,'error');    
@@ -102,6 +106,14 @@ export class AuthService {
    return (await this.afAuth.currentUser)?.sendEmailVerification();
   }
 
+    traerLocalStorage() : boolean{
+      if(localStorage.getItem("usuarioEnLinea")){
+        return true;
+      }else{
+        return false
+      }
+
+    }
 
 
 

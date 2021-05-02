@@ -38,7 +38,11 @@ import { TablaResultadosComponent } from './pages/juegos/componentes/tabla-resul
 import { JuegoSumandoComponent } from './pages/juegos/juego-sumando/juego-sumando.component';
 import { ListadosComponent } from './pages/listados/listados.component';
 import { JuegoTatetiComponent } from './pages/juegos/juego-tateti/juego-tateti.component';
-
+import { EncuestaComponent } from './pages/juegos/encuesta/encuesta.component';
+import { FormEncuestaComponent } from './pages/juegos/componentes/form-encuesta/form-encuesta.component';
+import { MemotestComponent } from './pages/juegos/componentes/memotest/memotest.component';
+import { JuegoMemotestComponent } from './pages/juegos/juego-memotest/juego-memotest.component';
+import { HttpClientModule } from '@angular/common/http';
 
  
 
@@ -63,7 +67,11 @@ import { JuegoTatetiComponent } from './pages/juegos/juego-tateti/juego-tateti.c
     TablaResultadosComponent,
     JuegoSumandoComponent,
     ListadosComponent,
-    JuegoTatetiComponent ,
+    JuegoTatetiComponent,
+    EncuestaComponent,
+    FormEncuestaComponent,
+    MemotestComponent,
+    JuegoMemotestComponent ,
    
 
    
@@ -80,7 +88,8 @@ import { JuegoTatetiComponent } from './pages/juegos/juego-tateti/juego-tateti.c
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxSpinnerModule 
+    NgxSpinnerModule ,
+    HttpClientModule
   ],
   providers: [AngularFirestore,AuthService ,JuegosService],
   bootstrap: [AppComponent]

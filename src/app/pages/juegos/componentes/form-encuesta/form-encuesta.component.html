@@ -1,0 +1,78 @@
+<form  class="needs-validation"  [formGroup]= "formularioAlta"  (ngSubmit)= "GuardarEncuesta()">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="" value="" formControlName='nombre'>
+        <small class="invalid" *ngIf="formularioAlta.get('nombre')?.errors?.required && formularioAlta.get('nombre')?.touched" >El nombre es requerido</small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="apellido">Apellido</label>
+        <input type="text" class="form-control" id="apellido" placeholder="" value="" formControlName='apellido'>
+        <small class="invalid" *ngIf="formularioAlta.get('apellido')?.errors?.required && formularioAlta.get('apellido')?.touched" >El apellido es requerido</small>
+      </div>
+    </div>
+
+    
+    <div class="row">
+
+    <div class="col-md-6 mb-3">
+        <label for="edad" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="edad" placeholder="Ingrese edad" formControlName='edad'>
+          <small class="invalid" *ngIf="formularioAlta.get('edad')?.errors?.required && formularioAlta.get('edad')?.touched" >La edad es requerida</small>
+          <small class="invalid" *ngIf="formularioAlta.get('edad')?.errors?.min || formularioAlta.get('edad')?.errors?.max && formularioAlta.get('edad')?.touched" >La edad debe ser entre 18 y 99 anos</small>
+        
+       </div>
+
+       <div class="col-md-6 mb-3">
+        <label for="tel" class="form-label">Teléfono</label>
+          <input type="text" class="form-control" id="tel" placeholder="Ingrese telefono" formControlName='tel'>
+          <small class="invalid" *ngIf="formularioAlta.get('tel')?.errors?.required && formularioAlta.get('tel')?.touched" >El teléfono es requerido</small>
+          <small class="invalid" *ngIf="formularioAlta.get('tel')?.errors?.pattern || formularioAlta.get('tel')?.touched" >Solo puedes ingresar numeros, y el minimos de caract. es 10</small>
+        
+       </div>
+    </div>
+      
+       <div class="col-md-4 mb-3">
+        <label for="juego">Elegí el Juego</label>
+        <select class="custom-select d-block w-100" id="juego" name="juego"  formControlName='juego'>
+          <option value="tateti">Tateti</option>
+          <option value="sumando">Sumando 15</option>
+          <option value="piedra">Piedra Papel o tijera</option>
+          <option value="memotest">Memotest</option>
+        </select>
+        <small class="invalid" *ngIf="formularioAlta.get('juego')?.errors?.required && formularioAlta.get('juego')?.touched" >Tiene que elegir uno</small>
+      </div>
+
+       <h4 class="mb-3">Que te parecio el juego</h4>
+
+       <div class="d-block my-3">
+         <div class="custom-control custom-radio">
+           <input id="bueno"  type="radio" value="bueno" class="custom-control-input" formControlName='calificacion' checked  required>
+           <label class="custom-control-label" for="bueno">Esta bueno</label>
+         </div>
+         <div class="custom-control custom-radio">
+           <input id="masomenos" type="radio" value="masomenos" class="custom-control-input" formControlName='calificacion' required>
+           <label class="custom-control-label" for="masomenos">Masomenos</label>
+         </div>
+         <div class="custom-control custom-radio">
+           <input id="malo"  type="radio" value="malo" class="custom-control-input" formControlName='calificacion' required>
+           <label class="custom-control-label" for="malo">Malisismo</label>
+         </div>
+         <small class="invalid" *ngIf="formularioAlta.get('calificacion')?.errors?.required && formularioAlta.get('calificacion')?.touched" >Es necesario elegir una califiacion</small>
+       </div>
+
+
+      
+            <div class="custom-control custom-checkbox">
+         <input type="checkbox" class="custom-control-input" id="termino" formControlName='termino' >
+         <label class="custom-control-label" for="termino">Acepto enviar los datos del formulario</label>
+         <small class="invalid" *ngIf="formularioAlta.get('terminos')?.errors?.required && formularioAlta.get('terminos')?.touched" >Debe validar aceptar para enviar</small>
+       </div>
+    
+    
+    
+              
+   <br>
+    
+    <button class="btn btn-primary btn-lg btn-block" type="submit"  [disabled]="formularioAlta.invalid" >Dar de Alta</button>
+  </form>

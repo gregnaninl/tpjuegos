@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guard/auth.guard';
 import { ChatComponent } from './pages/chat/chat.component';
 import { HomeComponent } from './pages/home/home.component';
+
 import { ListadosComponent } from './pages/listados/listados.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
@@ -15,9 +17,9 @@ const routes: Routes = [
   {path: 'registro', component : RegistroComponent} ,  
   {path: 'listados', component : ListadosComponent} , 
   {path: 'chat', component : ChatComponent} , 
-  { path: 'juegos', loadChildren: () => import('./juegos/juegos.module').then(m => m.JuegosModule),
-  data: { preload: true } 
-  },
+  
+  { path: 'juegos',canActivate: [AuthGuard], loadChildren: () => import('./juegos/juegos.module').then(m => m.JuegosModule),
+  data: { preload: true } },
   {path:'', redirectTo: 'home', pathMatch: 'full'},
   {path:'**', component: PageNotFoundComponent }
 

@@ -1,0 +1,35 @@
+<div >
+    <img src="./assets/imagenes/banner_1.png" class="img-fluid " alt="Responsive image" >
+  </div>
+  <br><br>
+  <div class="container">    
+      
+     
+    <h3 style="text-align: center;">Memotest</h3>
+    <div class="p-16">
+      <p class="text-center">Toque una tarjeta para darle la vuelta. 
+        Solo puede voltear un máximo de dos cartas a la vez. ¡Un partido eliminará esas cartas!</p>
+      <div class="grid p-16">
+        <app-memotest *ngFor="let c of cards; let idx=index" [data]="c" (cardClicked)="cardClicked(idx)">
+        </app-memotest>
+      </div>
+    </div>
+
+
+
+      
+      </div>
+   <br><br>
+      <div style="text-align: center;">
+          <button type="button" class="btn btn-primary btn-lg" id="volver" routerLink="/">volver</button>
+      </div>
+      <div>
+      <br><br>
+      <div class="container">
+       <app-tabla-resultados
+       [juegoFiltro]='juegoSeleccionado'
+       >
+
+        </app-tabla-resultados>
+      </div>
+      </div>

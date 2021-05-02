@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { JuegosService } from 'src/app/services/juegos.service';
 import Swal from 'sweetalert2';
+import { Jugadores } from 'src/app/clases/jugadores';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-juego-tateti',
@@ -12,8 +15,13 @@ export class JuegoTatetiComponent implements OnInit {
   xIsNext!: boolean;
   winner?: string;
   limpiar : boolean = true;
+  jugador! : Jugadores;
 
-  constructor() {}
+
+  constructor(private jugSvc :JuegosService) {
+    this.jugador= new Jugadores();
+  this.jugador.juego= "TaTeTi";
+  }
 
   ngOnInit() {
     this.newGame();
@@ -38,16 +46,23 @@ export class JuegoTatetiComponent implements OnInit {
       this.limpiar= false;
     this.winner = this.calculateWinner();
     if(this.winner){
-      Swal.fire({       
+
+      this.guardarJugada();
+
+      Swal.fire({
         icon: 'success',
-        title: 'Jugador : '+this.winner+' ,  Muy Bien Ganaste!!!',
-        showConfirmButton: false,
-        timer: 2000
-       });
+        title: 'GANASTE!!!',
+        text: this.winner+',  te envitamos a realizar una encuesta si lo deseas!!',
+        footer: '<a href="/juegos/encuesta">Completar la Encuesta</a>'
+      })  
+      
        this.newGame() ;  
     }
   }
 
+
+
+  
   calculateWinner():string {
     const lines = [
       [0, 1, 2],
@@ -73,4 +88,25 @@ export class JuegoTatetiComponent implements OnInit {
     }
     return "";
   }
+  
+  guardarJugada(){     
+
+    if(this.winner==='X'){
+     this.jugador.estado="ganador";
+    }else{
+      this.jugador.estado= "perdedor"
+    }
+    this.jugador.email= JSON.parse(localStorage.getItem("usuarioEnLinea")?.toString()!);
+    const fecha =  new Date();
+    this.jugador.fecha= formatDate(fecha,'dd-MM-yyyy hh:mm:ss a','en-US');
+   if(this.jugador.estado){     
+      console.log(this.jugador);
+      this.jugSvc.guardarJugada(this.jugador);
+
+    }   
+  }
+
+  
+
+
 }

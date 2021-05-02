@@ -73,28 +73,29 @@ export class PppComponent implements OnInit {
      setTimeout(() => {
       if(modelo.nuevoJuego.verificar())
       {
-        this.jugador.estado="perdedor"
+        this.jugador.estado="ganador"
         console.log(modelo.nuevoJuego); 
                
-        Swal.fire({       
+        Swal.fire({
           icon: 'success',
-          title: this.jugador1+',  Genio. Le ganaste a la maquina!',
-          showConfirmButton: false,
-          timer: 1500
-         });    
-     
+          title: 'GANASTE!!!',
+          text: this.jugador1+',  te envitamos a realizar una encuesta si lo deseas!!',
+          footer: '<a href="/juegos/encuesta">Completar la Encuesta</a>'
+        })  
+         
+           
       }
       else
         {
           this.jugador.estado="perdedor"
           console.log(modelo.nuevoJuego); 
          
-          Swal.fire({         
+          Swal.fire({
             icon: 'error',
-            title: 'Mala suerte. Has perdido con la maquina por que habia elegido: '+modelo.nuevoJuego.opcionMaquina,
-            showConfirmButton: false,
-            timer: 2500
-          });           
+            title: 'PERDISTE!!!',
+            text: this.jugador1+',  te envitamos a realizar una encuesta si lo deseas!!',
+            footer: '<a href="/juegos/encuesta">Completar la Encuesta</a>'
+          })         
 
         }      
        

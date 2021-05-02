@@ -1,0 +1,10 @@
+
+<div class="card" (click)="cardClicked.emit()" [@cardFlip]="data.state">
+  <div class="back">
+      <img src="assets/card-back.jpg">
+  </div>
+  <div class="front">
+  
+      <img [src]="'https://www.themoviedb.org/t/p/w600_and_h900_bestv2' + data.imageId" style="height: 200px;">
+  </div>
+</div>

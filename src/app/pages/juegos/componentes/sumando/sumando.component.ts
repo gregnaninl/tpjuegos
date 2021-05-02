@@ -64,23 +64,28 @@ export class SumandoComponent implements OnInit {
         {
           
           this.jugador.estado="ganador"
-          Swal.fire({       
+               
+          Swal.fire({
             icon: 'success',
-            title: this.jugador1+',  Muy Bien Ganaste!!!',
-            showConfirmButton: false,
-            timer: 1500
-           });   
+            title: 'GANASTE!!!',
+            text: this.jugador1+',  te envitamos a realizar una encuesta si lo deseas!!',
+            footer: '<a href="/juegos/encuesta">Completar la Encuesta</a>'
+          })
+       
         }
         else
           {
           
             this.jugador.estado="perdedor"
-            Swal.fire({         
+            
+            Swal.fire({
               icon: 'error',
-              title: 'MMM  Segui Participando o agarra la Calculadora!!!',
-              showConfirmButton: false,
-              timer: 1500
-            });     
+              title: 'PERDISTE!!!',
+              text: this.jugador1+',  te envitamos a realizar una encuesta si lo deseas!!',
+              footer: '<a href="/juegos/encuesta">Completar la Encuesta</a>'
+            })
+            
+                
           }
     
         console.log(this.nuevoJuego.fila1+","+this.nuevoJuego.fila2+","+ this.nuevoJuego.fila3+","+ this.nuevoJuego.fila4+","+ this.nuevoJuego.fila5);
@@ -113,6 +118,15 @@ export class SumandoComponent implements OnInit {
     this.ocultarVerificar = false;
     this.ocultarRespuesta= true;
 
+    this.numero1=0;
+    this.numero2=0;
+    this.numero3=0;
+    this.numero4=0;
+    this.numero5=0;
+    this.numero6=0;
+    this.numero7=0;
+    this.numero8=0;
+    this.numero9=0;
   }
 
   MostrarResultado(){
